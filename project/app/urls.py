@@ -5,5 +5,6 @@ app_name = 'app'
 
 urlpatterns = [
     path('', views.Index.as_view(), name='index'),
-    # path('base.html', views.Index.as_view(), name='base'),
+    path('post_create', views.PostCreate.as_view(), name='post_create'),
+    # path('base.html', views.Base.as_view(), name='base'), #テスト2022/1/19
 ]
