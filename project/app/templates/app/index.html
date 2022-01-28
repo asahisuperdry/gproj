@@ -20,6 +20,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ item.title }}</h5>
                         <p>{{ item.content }}</p>
+                        <a href="{% url 'app:post_detail' item.id %}" type="button" class="btn btn-primary btn-md">もっと読む</a>
                     </div>
                 </div>
             </div>
