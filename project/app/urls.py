@@ -13,5 +13,6 @@ urlpatterns = [
     path('login', views.Login.as_view(), name='login'),
     path('logout', views.Logout.as_view(), name='logout'),
     path('signup', views.SignUp.as_view(), name='signup'),
+    path('like/<int:post_id>', views.Like_add, name='like_add'),
     # path('base.html', views.Base.as_view(), name='base'), #テスト2022/1/19
 ]

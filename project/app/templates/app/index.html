@@ -18,7 +18,7 @@
                     <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
                         alt="Hollywood Sign on The Hill" />
                     <div class="card-body">
-                        <h5 class="card-title">{{ item.title }}</h5>
+                        <h5 class="card-title">{{ item.title }}<small>{{ item.author }}</small></h5>
                         <p>{{ item.content }}</p>
                         <a href="{% url 'app:post_detail' item.id %}" type="button" class="btn btn-primary btn-md">もっと読む</a>
                     </div>
