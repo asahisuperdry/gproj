@@ -14,5 +14,8 @@ urlpatterns = [
     path('logout', views.Logout.as_view(), name='logout'),
     path('signup', views.SignUp.as_view(), name='signup'),
     path('like/<int:post_id>', views.Like_add, name='like_add'),
-    # path('base.html', views.Base.as_view(), name='base'), #テスト2022/1/19
+    path('category_list', views.CategoryList.as_view(), name='category_list'),
+    path('category_detail/<str:name_en>', views.CategoryDetail.as_view(), name='category_detail'),
+    # path('base.html', views.Base.as_view(), name='base'), #�?ス�?2022/1/19
 ]
+

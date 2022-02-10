@@ -1,0 +1,20 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-9">
+        <br>
+        <h2>Category List</h2>
+        <br>
+        {% for item in category_list %}
+        <a href="{% url 'app:category_detail' item.name_en %}">{{ item.name }}</a><br>
+        {% endfor %}
+        </div>
+        <br>
+    </div>
+
+</div>
+
+{% endblock %}

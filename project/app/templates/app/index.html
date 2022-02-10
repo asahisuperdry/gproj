@@ -3,6 +3,8 @@
 {% block content %}
 
         <h1>テスト</h1>
+        {% load static%}
+        <img src="DSC_0212.JPG" style="max-height:500px"/>
         <!-- Jumbotron -->
         <div class="p-5 text-center bg-light">
             <h1 class="mb-3">My First BLOG</h1>
@@ -15,10 +17,29 @@
             {% for item in post_list %}
             <div class="col">
                 <div class="card">
+                    {% if item.thumbnail %}
+                    <h1>ある</h1>
+                    <img src="{{ item.thumbnail.url }}" class="card-img-top" alt="{{ item.title }}" />
+                    <img src="../media/images/DSC_0212.JPG">
+                    <img src="./media/images/DSC_0212.JPG">
+                    <img src="/media/images/DSC_0212.JPG">
+                    <img src="media/images/DSC_0212.JPG">
+                    <img src="/images/DSC_0212.JPG">
+                    <img src="images/DSC_0212.JPG">
+                    <img src="/DSC_0212.JPG">
+                    <img src="DSC_0212.JPG">
+                    <img src="/media/images/DSC_0212.JPG" class="card-img-top" alt="画像投稿テスト">
+                    {% else %}
+                    <h1>ない</h1>
                     <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
-                        alt="Hollywood Sign on The Hill" />
+                        alt="{{ item.title }}" />
+                    {% endif %}
+                    <a href="{% url 'app:post_detail' item.id %}">
+                        <div class="mask rgba-white-slight"></div>
+                    </a> 
                     <div class="card-body">
                         <h5 class="card-title">{{ item.title }}<small>{{ item.author }}</small></h5>
+                        <p>{{ item.category }}</p>
                         <p>{{ item.content }}</p>
                         <a href="{% url 'app:post_detail' item.id %}" type="button" class="btn btn-primary btn-md">もっと読む</a>
                     </div>

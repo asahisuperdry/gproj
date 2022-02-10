@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-z352p+(3pzcqia8u!dg)o^q0p8^5e-7$)!#pjym7s84dtrz&@h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.18']
+# ALLOWED_HOSTS = ['192.168.1.18']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -63,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -112,17 +114,24 @@ USE_I18N = True
 
 USE_TZ = True
 
+import os
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'images')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ログイン機能の追加 2022/1/27
+# 繝ｭ繧ｰ繧､繝ｳ讖溯�ｽ縺ｮ霑ｽ蜉 2022/1/27
 LOGIN_URL = 'app:login'
 LOGIN_REDIRECT_URL = 'app:index'
+
+
+# MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
+MEDIA_ROOT = Path.joinpath(BASE_DIR, '/media/')
+MEDIA_URL = 'media/'

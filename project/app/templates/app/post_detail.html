@@ -4,7 +4,7 @@
 
 <div class="row">
 
-    <div class="col-md-9">
+    <div class="col-md-8">
         <br>
         <div class="card mb-3">
             <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="card-img-top" alt="Wild Landscape" />
@@ -18,6 +18,26 @@
             </div>
         </div>
         <br>
+    </div>
+
+    <div class="col-md-4">
+        <br>
+        <div class="col-md-9">
+            <div class="card-body">
+                <h5 class="card-title">{{ object.category }}</h5>
+                <p>このカテゴリの記事</p>
+                <ul class="list-group">
+                    {% for item in category_posts %}
+                        <li class="list-group-item">
+                            <a href="{% url 'app:post_detail' item.id %}">{{ item.title }}</a>
+                            <p>{{ item.created_at }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div>
+    
     </div>
 
 </div>

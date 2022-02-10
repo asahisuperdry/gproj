@@ -9,11 +9,16 @@ class Category(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.name
+        
+
 class Post(models.Model):
     author =  models.ForeignKey(User, on_delete=models.PROTECT, blank=False)
     title = models.CharField('タイトル',max_length=50)
     content = models.TextField('内容', max_length=1000)
     category = models.ForeignKey('Category', on_delete=models.PROTECT)
+    thumbnail = models.ImageField(upload_to='images/', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
