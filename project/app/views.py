@@ -34,7 +34,7 @@ class Index(TemplateView):
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
-    success_url = reverse_lazy('app :index')
+    success_url = reverse_lazy('app:index')
 
     def form_valid(self, form):
         form.instance.author_id = self.request.user.id

@@ -7,11 +7,15 @@
     <div class="col-md-8">
         <br>
         <div class="card mb-3">
+            {% if object.thumbnail %}
+            <img src="{{ object.thumbnail.url }}" class="card-img-top" alt="{{ object.title }}" />
+            {% else %}
             <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="card-img-top" alt="Wild Landscape" />
+            {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{ object.title }}</h5>
                 <p class="card-text">{{ object.content }}</p>
-                <a class="btn" href="{% url 'app:like_add' object.pk %}" style="background-color: #FF6699; color:white;">お気に入りに入れる</a>
+                <a class="btn" href="{% url 'app:like_add' object.pk %}" style="background-color: #FF6699; color:white;">お気に入りに追加するｋ</a>
                 <hr>
                 <a href="{% url 'app:post_update' object.id %}" class="btn btn-primary">更新</a>
                 <a href="{% url 'app:post_delete' object.pk %}" class="btn btn-outline-danger">削除</a>
@@ -25,7 +29,7 @@
         <div class="col-md-9">
             <div class="card-body">
                 <h5 class="card-title">{{ object.category }}</h5>
-                <p>このカテゴリの記事</p>
+                <p>同じカテゴリの記事</p>
                 <ul class="list-group">
                     {% for item in category_posts %}
                         <li class="list-group-item">
