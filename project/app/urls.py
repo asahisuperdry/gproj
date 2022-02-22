@@ -16,6 +16,7 @@ urlpatterns = [
     path('like/<int:post_id>', views.Like_add, name='like_add'),
     path('category_list', views.CategoryList.as_view(), name='category_list'),
     path('category_detail/<str:name_en>', views.CategoryDetail.as_view(), name='category_detail'),
-    # path('base.html', views.Base.as_view(), name='base'), #ãƒ?ã‚¹ãƒ?2022/1/19
+    path('serach', views.Search, name='search'),
+    # path('base.html', views.Base.as_view(), name='base'), #ï¿½?ã‚¹ï¿½?2022/1/19
 ]
 

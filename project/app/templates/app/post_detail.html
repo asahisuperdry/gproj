@@ -14,8 +14,8 @@
             {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{ object.title }}</h5>
-                <p class="card-text">{{ object.content }}</p>
-                <a class="btn" href="{% url 'app:like_add' object.pk %}" style="background-color: #FF6699; color:white;">お気に入りに追加するｋ</a>
+                <p class="card-text">{{ object.content|safe }}</p>
+                <a class="btn" href="{% url 'app:like_add' object.pk %}" style="background-color: #FF6699; color:white;">お気に入りに追加する</a>
                 <hr>
                 <a href="{% url 'app:post_update' object.id %}" class="btn btn-primary">更新</a>
                 <a href="{% url 'app:post_delete' object.pk %}" class="btn btn-outline-danger">削除</a>
@@ -29,7 +29,7 @@
         <div class="col-md-9">
             <div class="card-body">
                 <h5 class="card-title">{{ object.category }}</h5>
-                <p>同じカテゴリの記事</p>
+                <p>同じカカテゴリの記事</p>
                 <ul class="list-group">
                     {% for item in category_posts %}
                         <li class="list-group-item">

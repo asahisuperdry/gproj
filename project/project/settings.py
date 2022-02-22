@@ -128,7 +128,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ログイン機能の追加 2022/1/27
+# ログイン機�?�の追�? 2022/1/27
 LOGIN_URL = 'app:login'
 LOGIN_REDIRECT_URL = 'app:index'
 
