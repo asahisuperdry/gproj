@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app.apps.AppConfig',
     # 'app',
+    'django.contrib.sites',
+    'sitemanage',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -128,7 +133,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ログイン機�?�の追�? 2022/1/27
+# ログイン機�?�の追�? 2022/1/27
 LOGIN_URL = 'app:login'
 LOGIN_REDIRECT_URL = 'app:index'
 

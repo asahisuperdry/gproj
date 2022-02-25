@@ -14,7 +14,7 @@
             {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{ object.title }}</h5>
-                <p class="card-text">{{ object.content|safe }}</p>
+                <p class="card-text">{{ object.content|safe|linebreaksbr|urlize }}</p>
                 <a class="btn" href="{% url 'app:like_add' object.pk %}" style="background-color: #FF6699; color:white;">お気に入りに追加する</a>
                 <hr>
                 <a href="{% url 'app:post_update' object.id %}" class="btn btn-primary">更新</a>
